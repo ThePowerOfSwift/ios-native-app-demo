@@ -1,0 +1,26 @@
+//
+// Prefix header for all source files of the 'invoicing' target in the 'invoicing' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
+
+#import "invoicingAppDelegate.h"
+
+#define kTabBarHeight 50.0
+#define kKeyboardAnimationDuration 0.3
+
+#define kDateFormat @"dd/MM/yyy"
+#define kDateTimeFormat @"MMM dd, yyyy HH:mm"
+#define kAppName @"InvoiceOn for iPhone"
+#define kAppVersion @"1.4"
+#define kFeedbackEmail @"feedback@invoiceon.com"

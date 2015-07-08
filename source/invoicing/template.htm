@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <!--
+    <meta name='viewport' content='initial-scale=1.0,maximum-scale=10.0'/>
+     -->
+    
+	<title></title>
+
+	
+
+</head>
+
+<body>
+<div id="{TYPE}" class="include_bank_{INCLUDE_BANK} include_code_{INCLUDE_CODE} include_logo_{INCLUDE_LOGO} include_pay_{INCLUDE_PAY}">    
+
+    <style type="text/css">
+        
+        * { margin: 0; padding: 0; }
+        body { font: 14px/1.4 Georgia, serif; }
+        #page-wrap { width: 800px; margin: 0 auto; }
+        
+        div { border: 0; font: 14px Georgia, Serif; overflow: hidden; resize: none; }
+        table { border-collapse: collapse; }
+        table td, table th { border: 1px solid black; padding: 5px; }
+        
+        #header { height: 15px; width: 100%; margin: 20px 0; background: #222; text-align: center; color: white; font: bold 15px Helvetica, Sans-Serif; text-decoration: uppercase; letter-spacing: 20px; padding: 8px 0px; }
+        
+        #address { width: 250px; height: 170px; float: left; }
+        #customer { overflow: hidden; }
+        
+        #logo { text-align: right; float: right; position: relative; margin-top: 25px; border: 1px solid #fff; max-width: 540px; max-height: 100px; overflow: hidden; }
+        #customer-title { font-size: 20px; font-weight: bold; float: left; width: 250px; }
+        
+        #meta { margin-top: 1px; width: 350px; float: right; clear:right; }
+        #meta td { text-align: right;  }
+        #meta td.meta-head { text-align: left; background: #eee; width:100px; }
+        #meta td div { width: 100%; height: 20px; text-align: right; }
+        
+        #items { clear: both; width: 100%; margin: 30px 0 0 0; border: 1px solid black; }
+        #items th { background: #eee; }
+        /* #items div { width: 80px; height: 50px; } */
+        #items tr.item-row td { border: 0; vertical-align: top; padding:10px 5px; border-bottom:1px dashed #000; text-align:center;}
+        #items td.description { width: 75px; }
+        #items td.item-name { width: 400px; }
+        #items td.description div, #items td.item-name div { width: 100%; }
+        #items td.total-line { border-right: 0; text-align: right; }
+        #items td.total-value { border-left: 0; padding: 10px; text-align: right; }
+        #items td.total-value div { height: 20px; background: none; }
+        #items td.balance { background: #eee; }
+        #items td.blank { border: 0; }
+        
+        #terms { text-align: center; margin: 20px 0 0 0; }
+        #terms h5 { text-transform: uppercase; font: 13px Helvetica, Sans-Serif; letter-spacing: 10px; border-bottom: 1px solid black; padding: 0 0 8px 0; margin: 0 0 8px 0; }
+        #terms div { width: 100%; text-align: center;}
+        
+        #copy { margin-top:20px; font-size:10px; color:#333333; text-align: center; }
+        
+        div.bank_details {  }
+        div.product_code {color:#333333; font-style:italic;}
+        
+        #quote .invoice { display:none }
+        #invoice .quote { display:none }
+        .include_bank_off .bank_details { display:none } 
+        .include_pay_off .pay_details { display:none } 
+        .include_code_off .product_code { display:none } 
+        .include_logo_off #logo { display:none }
+        
+    </style>
+    
+    
+	<div id="page-wrap">
+
+		<div id="header" class="quote">{L_QUOTE_TITLE}</div>
+        <div id="header" class="invoice">{L_INVOICE_TITLE}</div>
+
+		<div id="identity">
+
+            <div id="address">
+                {COMPANY}<br>
+                {ADDRESS1}<br>
+                {ADDRESS2}<br>
+                {L_REGNO}: {REGNO}<br>
+                <br>
+                {L_PHONE}: {PHONE}<br>
+                {L_EMAIL}: {EMAIL}
+            </div>
+
+            <div id="logo">
+              <img id="image" src="{LOGO}" alt="logo" /> 
+            </div>
+
+		</div>
+
+		<div style="clear:both"></div>
+
+		<div id="customer">
+
+            <div id="customer-title">{CUSTOMER}</div>
+
+            <table id="meta">
+                <tr class="invoice">
+                    <td class="meta-head">{L_INVOICENO}</td>
+                    <td><div>{INVOICENO}</div></td>
+                </tr>
+                <tr>
+
+                    <td class="meta-head">{L_DATE}</td>
+                    <td><div id="date">{DATE}</div></td>
+                </tr>
+                <tr>
+                    <td class="meta-head">{L_TOTAL}</td>
+                    <td><div class="due">{CURRENCY} {TOTAL}</div></td>
+                </tr>
+
+            </table>
+            
+            <table id="meta" class="bank_details">
+                <tr>
+                    <td class="meta-head">{L_BANK}</td>
+                    <td><div id="date">{BANK}</div></td>
+                </tr>
+                <tr>
+                    <td class="meta-head">{L_ACCOUNT}</td>
+                    <td><div class="due">{ACCOUNT}</div></td>
+                </tr>
+                
+            </table>
+            
+            <table id="meta" class="pay_details">
+                <tr>
+                    <td class="meta-head">{L_PAYNOW}</td>
+                    <td><div id="date" style="height:24px">
+                        <a href="{PAYPAL}"><img src="https://www.paypalobjects.com/en_US/i/btn/x-click-but23.gif" alt="PayPal" title="PayPal"></a>
+                    </div></td>
+                </tr>
+                
+            </table>
+
+		</div>
+
+		<table id="items">
+
+		  <tr>
+		      <th style="text-align:left">{L_PRODUCT}</th>
+		      <th>{L_UNIT}</th>
+		      <th>{L_UNITCOST}</th>
+		      <th>{L_QUANTITY}</th>
+		      <th>{L_PRICE}</th>
+		  </tr>
+
+		  
+            {PRODUCT}
+          <tr class="item-row">
+		      <td class="item-name" style="text-align:left">{NAME}<div class="product_code">{CODE}</div></td>
+		      <td class="description">{UNIT}</td>
+		      <td>{CURRENCY} {UNITPRICE}</td>
+		      <td>{QUANTITY}</td>
+		      <td>{CURRENCY} {QUANTITYPRICE}</td>
+		  </tr>
+            {/PRODUCT}
+
+
+		  <tr>
+		      <td colspan="2" class="blank" style="border-top:1px solid black;"> </td>
+		      <td colspan="2" class="total-line">{L_SUBTOTAL}</td>
+		      <td class="total-value" nowrap><div id="subtotal">{CURRENCY} {SUBTOTAL}</div></td>
+		  </tr>
+            
+            <tr>
+                <td colspan="2" class="blank"> </td>
+                <td colspan="2" class="total-line">{L_DISCOUNT}</td>
+                <td class="total-value" nowrap><div id="subtotal">{CURRENCY} {DISCOUNT}</div></td>
+            </tr>  
+            
+            <tr>
+                <td colspan="2" rowspan="2" class="blank" nowrap> 
+                    &nbsp;
+                </td>
+                <td colspan="2" class="total-line">{L_TAXES}</td>
+                <td class="total-value" nowrap><div id="subtotal">{CURRENCY} {TAXES}</div></td>
+            </tr>
+            
+		  <tr>
+		      <!--
+              <td colspan="2" class="blank" nowrap> 
+                  <div class="bank_details" style="float:left; width:auto; height:auto;">
+                      {L_ACCOUNT}: {ACCOUNT}
+                  </div>
+              </td>
+               -->
+		      <td colspan="2" class="total-line">{L_TOTAL}</td>
+		      <td class="total-value" nowrap><div id="total">{CURRENCY} {TOTAL}</div></td>
+		  </tr>
+            
+            
+            <!--
+		  <tr>
+		      <td colspan="2" class="blank"> </td>
+		      <td colspan="2" class="total-line">Amount Paid</td>
+
+		      <td class="total-value"><div id="paid">$0.00</div></td>
+		  </tr>
+            
+		  <tr>
+		      <td colspan="2" class="blank"> </td>
+		      <td colspan="2" class="total-line balance">Balance Due</td>
+		      <td class="total-value balance"><div class="due">$875.00</div></td>
+		  </tr>
+             -->
+
+		</table>
+        
+
+		<div id="terms" class="quote">
+            <h5>{L_QUOTE_FOOTER1}</h5>
+            <div>{L_QUOTE_FOOTER2}</div>
+            <div>{L_QUOTE_FOOTER3}</div>
+		</div>
+        
+        <div id="terms" class="invoice">
+            <h5>{L_INVOICE_FOOTER1}</h5>
+            <div>{L_INVOICE_FOOTER2}</div>
+            <div>{L_INVOICE_FOOTER3}</div>
+		</div>
+        
+        <div id="copy">Sent using {APPNAME}</div>
+
+	</div>
+
+</div>    
+</body>
+
+</html>

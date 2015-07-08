@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+	<array>
+		<dict>
+			<key>detail</key>
+			<string>Setup your company name</string>
+			<key>id</key>
+			<string>company</string>
+			<key>name</key>
+			<string>Company</string>
+		</dict>
+		<dict>
+			<key>detail</key>
+			<string>Common Measuring Units</string>
+			<key>id</key>
+			<string>units</string>
+			<key>name</key>
+			<string>Units</string>
+		</dict>
+		<dict>
+			<key>detail</key>
+			<string>Define your usual taxes</string>
+			<key>id</key>
+			<string>taxes</string>
+			<key>name</key>
+			<string>Taxes</string>
+		</dict>
+		<dict>
+			<key>detail</key>
+			<string>Common Discounts</string>
+			<key>id</key>
+			<string>discounts</string>
+			<key>name</key>
+			<string>Discounts</string>
+		</dict>
+		<dict>
+			<key>detail</key>
+			<string>Application Settings</string>
+			<key>id</key>
+			<string>other</string>
+			<key>name</key>
+			<string>Other</string>
+		</dict>
+	</array>
+
+</plist>
